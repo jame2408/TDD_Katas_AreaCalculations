@@ -80,7 +80,7 @@ namespace AreaCalculations
 
         public double area()
         {
-            throw new NotImplementedException();
+            return Math.Round((radius * radius * Math.PI), 2);
         }
     }
 }
