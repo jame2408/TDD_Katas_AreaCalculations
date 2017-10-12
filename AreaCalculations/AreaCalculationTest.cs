@@ -53,6 +53,12 @@ namespace AreaCalculations
 
             Assert.AreEqual(28.27, sut.GetTotalArea(circle));
         }
+
+        [Test]
+        public void Total_Area_Is_Sum_Of_Areas_Of_Different_Shapes()
+        {
+            Assert.AreEqual(49.14, sut.GetTotalArea(new Rectangle(4, 2), new Rectangle(3, 4), new Circle(1), new Square(1), new Triangle(10, 5)));
+        }
     }
 
     
