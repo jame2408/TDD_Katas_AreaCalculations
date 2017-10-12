@@ -23,7 +23,7 @@ namespace AreaCalculations
                 sum += area;
             }
 
-            return sum;
+            return Math.Round(sum, 2);
         }
     }
 
