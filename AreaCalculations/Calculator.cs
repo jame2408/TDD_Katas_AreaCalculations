@@ -24,15 +24,14 @@ namespace AreaCalculations
 
     public class Triangle : IShape
     {
+        private double TriangleBase { get; }
+        private double TriangleHeight { get; }
+
         public Triangle(double triangleBase, double triangleHeight)
         {
             this.TriangleBase = triangleBase;
             this.TriangleHeight = triangleHeight;
         }
-
-        private double TriangleBase { get; }
-
-        private double TriangleHeight { get; }
 
         public double area()
         {
@@ -42,12 +41,12 @@ namespace AreaCalculations
 
     public class Square : IShape
     {
+        private double Side { get; }
+
         public Square(double side)
         {
             this.Side = side;
         }
-
-        private double Side { get; }
 
         public double area()
         {
@@ -57,33 +56,33 @@ namespace AreaCalculations
 
     public class Rectangle : IShape
     {
-        private double height;
-        private double width;
+        private double Height { get; }
+        private double Width { get; }
 
         public Rectangle(double height, double width)
         {
-            this.height = height;
-            this.width = width;
+            this.Height = height;
+            this.Width = width;
         }
 
         public double area()
         {
-            return height * width;
+            return Height * Width;
         }
     }
 
     public class Circle : IShape
     {
-        private double radius;
+        private double Radius { get;}
 
         public Circle(double radius)
         {
-            this.radius = radius;
+            this.Radius = radius;
         }
 
         public double area()
         {
-            return Math.Round((radius * radius * Math.PI), 2);
+            return Math.Round((Radius * Radius * Math.PI), 2);
         }
     }
 }
