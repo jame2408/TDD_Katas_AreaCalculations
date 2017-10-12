@@ -22,6 +22,16 @@ namespace AreaCalculations
 
             Assert.AreEqual(12, sut.GetTotalArea(triangle));
         }
+
+        [Test]
+        public void AreaOfASquareIsSquareOfSide()
+        {
+            const double side = 6;
+
+            var square = new Square(side);
+
+            Assert.AreEqual(36, sut.GetTotalArea(square));
+        }
     }
 
 }

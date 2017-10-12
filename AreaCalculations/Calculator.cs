@@ -2,19 +2,24 @@
 
 namespace AreaCalculations
 {
+    interface IShape
+    {
+        double area();
+    }
+
     public class Calculator
     {
         public Calculator()
         {
         }
 
-        internal double GetTotalArea(Triangle triangle)
+        internal double GetTotalArea(IShape shape)
         {
-            return (triangle.TriangleBase * triangle.TriangleHeight) / 2;
+            return shape.area();
         }
     }
 
-    public class Triangle
+    public class Triangle : IShape
     {
         public Triangle(double triangleBase, double triangleHeight)
         {
@@ -22,8 +27,27 @@ namespace AreaCalculations
             this.TriangleHeight = triangleHeight;
         }
 
-        public double TriangleBase { get; }
+        private double TriangleBase { get; }
 
-        public double TriangleHeight { get; }
+        private double TriangleHeight { get; }
+
+        public double area()
+        {
+            return (TriangleBase * TriangleHeight) / 2;
+        }
+    }
+
+    public class Square : IShape
+    {
+        public Square(double side)
+        {
+            this.Side = side;
+        }
+
+        public double Side { get; }
+        public double area()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
