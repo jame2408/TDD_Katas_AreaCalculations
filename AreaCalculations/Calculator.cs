@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 
 namespace AreaCalculations
 {
@@ -10,10 +9,6 @@ namespace AreaCalculations
 
     public class Calculator
     {
-        public Calculator()
-        {
-        }
-
         internal double GetTotalArea(params IShape[] shapes)
         {
             var sum = 0d;
