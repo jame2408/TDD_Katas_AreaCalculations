@@ -65,7 +65,7 @@ namespace AreaCalculations
 
         public double area()
         {
-            throw new NotImplementedException();
+            return height * width;
         }
     }
 }
