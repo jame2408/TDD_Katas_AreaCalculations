@@ -59,6 +59,12 @@ namespace AreaCalculations
         {
             Assert.AreEqual(49.14, sut.GetTotalArea(new Rectangle(4, 2), new Rectangle(3, 4), new Circle(1), new Square(1), new Triangle(10, 5)));
         }
+
+        [Test]
+        public void Total_Area_Is_Rounded_To_2_Decimals()
+        {
+            Assert.AreEqual(4.45, sut.GetTotalArea(new Rectangle(1.112, 2), new Rectangle(1.111, 2)));
+        }
     }
 
     
