@@ -43,6 +43,17 @@ namespace AreaCalculations
 
             Assert.AreEqual(32, sut.GetTotalArea(rectangle));
         }
+
+        [Test]
+        public void Area_Of_A_Circle_Is_Square_Of_Radius_Mulitplied_By_Pi()
+        {
+            const double radius = 3;
+
+            var circle = new Circle(radius);
+
+            Assert.AreEqual(28.27, sut.GetTotalArea(circle));
+        }
     }
 
+    
 }
