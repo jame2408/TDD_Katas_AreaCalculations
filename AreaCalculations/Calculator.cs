@@ -44,10 +44,11 @@ namespace AreaCalculations
             this.Side = side;
         }
 
-        public double Side { get; }
+        private double Side { get; }
+
         public double area()
         {
-            throw new NotImplementedException();
+            return Side * Side;
         }
     }
 }
