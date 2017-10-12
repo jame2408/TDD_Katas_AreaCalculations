@@ -51,4 +51,21 @@ namespace AreaCalculations
             return Side * Side;
         }
     }
+
+    internal class Rectangle : IShape
+    {
+        private double height;
+        private double width;
+
+        public Rectangle(double height, double width)
+        {
+            this.height = height;
+            this.width = width;
+        }
+
+        public double area()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

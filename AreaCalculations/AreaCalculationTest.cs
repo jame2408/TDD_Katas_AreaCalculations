@@ -24,13 +24,24 @@ namespace AreaCalculations
         }
 
         [Test]
-        public void AreaOfASquareIsSquareOfSide()
+        public void Area_Of_A_Square_Is_Square_Of_Side()
         {
             const double side = 6;
 
             var square = new Square(side);
 
             Assert.AreEqual(36, sut.GetTotalArea(square));
+        }
+
+        [Test]
+        public void Area_Of_A_Rectangle_Is_Width_Multiplied_By_Height()
+        {
+            const double height = 4;
+            const double width = 8;
+
+            var rectangle = new Rectangle(height, width);
+
+            Assert.AreEqual(32, sut.GetTotalArea(rectangle));
         }
     }
 
