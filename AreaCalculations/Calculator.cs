@@ -10,19 +10,20 @@ namespace AreaCalculations
 
         internal double GetTotalArea(Triangle triangle)
         {
-            throw new NotImplementedException();
+            return (triangle.TriangleBase * triangle.TriangleHeight) / 2;
         }
     }
 
     public class Triangle
     {
-        private double triangleBase;
-        private double triangleHeight;
-
         public Triangle(double triangleBase, double triangleHeight)
         {
-            this.triangleBase = triangleBase;
-            this.triangleHeight = triangleHeight;
+            this.TriangleBase = triangleBase;
+            this.TriangleHeight = triangleHeight;
         }
+
+        public double TriangleBase { get; }
+
+        public double TriangleHeight { get; }
     }
 }
