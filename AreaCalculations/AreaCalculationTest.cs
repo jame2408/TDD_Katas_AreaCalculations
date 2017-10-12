@@ -65,6 +65,12 @@ namespace AreaCalculations
         {
             Assert.AreEqual(4.45, sut.GetTotalArea(new Rectangle(1.112, 2), new Rectangle(1.111, 2)));
         }
+
+        [Test]
+        public void Total_Area_Is_0_When_There_Are_No_Shapes()
+        {
+            Assert.AreEqual(0, sut.GetTotalArea());
+        }
     }
 
     
