@@ -1,22 +1,18 @@
 ﻿using System;
+using System.Linq;
 
 namespace AreaCalculations
 {
-    interface IShape
+    public interface IShape
     {
-        double area();
+        double Area();
     }
 
     public class Calculator
     {
-        internal double GetTotalArea(params IShape[] shapes)
+        public double GetTotalArea(params IShape[] shapes)
         {
-            var sum = 0d;
-            foreach (var shape in shapes)
-            {
-                var area = shape.area();
-                sum += area;
-            }
+            var sum = shapes.Sum(shape => shape.Area());
 
             return Math.Round(sum, 2);
         }
@@ -24,16 +20,16 @@ namespace AreaCalculations
 
     public class Triangle : IShape
     {
-        private double TriangleBase { get; }
-        private double TriangleHeight { get; }
-
         public Triangle(double triangleBase, double triangleHeight)
         {
             this.TriangleBase = triangleBase;
             this.TriangleHeight = triangleHeight;
         }
 
-        public double area()
+        private double TriangleBase { get; }
+        private double TriangleHeight { get; }
+
+        public double Area()
         {
             return (TriangleBase * TriangleHeight) / 2;
         }
@@ -41,14 +37,14 @@ namespace AreaCalculations
 
     public class Square : IShape
     {
-        private double Side { get; }
-
         public Square(double side)
         {
             this.Side = side;
         }
 
-        public double area()
+        private double Side { get; }
+
+        public double Area()
         {
             return Side * Side;
         }
@@ -56,16 +52,16 @@ namespace AreaCalculations
 
     public class Rectangle : IShape
     {
-        private double Height { get; }
-        private double Width { get; }
-
         public Rectangle(double height, double width)
         {
             this.Height = height;
             this.Width = width;
         }
 
-        public double area()
+        private double Height { get; }
+        private double Width { get; }
+
+        public double Area()
         {
             return Height * Width;
         }
@@ -73,14 +69,14 @@ namespace AreaCalculations
 
     public class Circle : IShape
     {
-        private double Radius { get;}
-
         public Circle(double radius)
         {
             this.Radius = radius;
         }
 
-        public double area()
+        private double Radius { get; }
+
+        public double Area()
         {
             return Math.Round((Radius * Radius * Math.PI), 2);
         }
